@@ -44,7 +44,7 @@ overlay.addEventListener('click', closeModal)
 
 document.addEventListener('keydown', function (e) {
 
-    if (e.code === "Escape") {
+    if (e.code === 'Escape') {
         closeModal()
         console.log('YOU SON OF A BITCH. IM IN.')
     }
