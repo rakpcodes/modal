@@ -16,32 +16,30 @@ Psuedo 🧪:
 // VARIABLES
 const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
-const closeModal = document.querySelector('.close-modal')
-const openModal = document.querySelectorAll('.show-modal')
+const btnModalHide = document.querySelector('.close-modal')
+const btnModalShow = document.querySelectorAll('.show-modal')
+
+
+// FUNCTIONS
+const openModal = () => {
+    overlay.classList.remove('hidden')
+    modal.classList.remove('hidden')
+}
+
+const closeModal = () => {
+    overlay.classList.add('hidden')
+    modal.classList.add('hidden')
+}
 
 
 
-for (let i = 0; i < openModal.length; i++) {
 
-    openModal[i].addEventListener('click', function () {
+for (let i = 0; i < btnModalShow.length; i++) {
 
-        overlay.classList.remove('hidden')
-        modal.classList.remove('hidden')
+    btnModalShow[i].addEventListener('click', openModal)
 
-        closeModal.addEventListener('click', function () {
+    btnModalHide.addEventListener('click', closeModal)
 
-            overlay.classList.add('hidden')
-            modal.classList.add('hidden')
-
-        })
-
-        overlay.addEventListener('click', function () {
-
-            overlay.classList.add('hidden')
-            modal.classList.add('hidden')
-
-        })
-
-    })
+    overlay.addEventListener('click', closeModal)
 
 }
