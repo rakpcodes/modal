@@ -35,11 +35,17 @@ const closeModal = () => {
 
 
 for (let i = 0; i < btnModalShow.length; i++) {
-
     btnModalShow[i].addEventListener('click', openModal)
-
-    btnModalHide.addEventListener('click', closeModal)
-
-    overlay.addEventListener('click', closeModal)
-
 }
+
+btnModalHide.addEventListener('click', closeModal)
+
+overlay.addEventListener('click', closeModal)
+
+document.addEventListener('keydown', function (e) {
+
+    if (e.code === "Escape") {
+        closeModal()
+        console.log('YOU SON OF A BITCH. IM IN.')
+    }
+})
